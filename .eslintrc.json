@@ -1,0 +1,36 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["validate-filename"],
+  "rules": {
+    "validate-filename/naming-rules": [
+      "error",
+      {
+        "rules": [
+          {
+            "case": "kebab",
+            "target": "**/app/**",
+            "patterns": "^(page|layout|loading|error|not-found|route|template).tsx$"
+          },
+          {
+            "case": "camel",
+            "target": "**/hooks/**",
+            "patterns": "^use"
+          },
+          {
+            "case": "camel",
+            "target": "**/providers/**",
+            "patterns": "^[a-zA-Z]*Provider"
+          },
+          {
+            "case": "kebab",
+            "target": "**/utils/**"
+          },
+          {
+            "case": "kebab",
+            "target": "**/types/**"
+          }
+        ]
+      }
+    ]
+  }
+}
